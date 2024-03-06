@@ -7,8 +7,7 @@ def menu():
     """
     print(titulo)
     try:
-        opt=input('Ingrese el numero de la opcion que desea realizar: \n1.Agregar Empleado: \n2.Agregar nomina: \n3.Consultar colilla de pago: \n4Consultar nomina: \n5.Salir  ' )
-    
+        opt=input('Ingrese el numero de la opcion que desea realizar: \n1.Agregar Empleado: \n2.Agregar nomina: \n3.Consultar colilla de pago: \n4.Consultar nomina: \n5.Salir\n -  ' )
         if opt in listaMenu:
             return opt
         else: 

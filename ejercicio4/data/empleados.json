@@ -1,9 +1,52 @@
 {
     "123": {
         "id": "123",
-        "nombre": "",
-        "cargo": "sdf",
-        "salario": 123.0,
+        "nombre": "juan",
+        "cargo": "programador",
+        "salario": 120000.0,
+        "nomina": {
+            "enero": {
+                "mesPagado": "enero",
+                "fechaPago": "10/02/2024",
+                "sueldoBase": 120000.0,
+                "valorTotalHrasExtras": 5500.0,
+                "cuotaPrestamo": 0.0,
+                "descuentoxCafeteria": 0.0,
+                "totalAPagar": 125500.0
+            },
+            "febrero": {
+                "mesPagado": "febrero",
+                "fechaPago": "03/02/2024",
+                "sueldoBase": 120000.0,
+                "valorTotalHrasExtras": 11000.0,
+                "cuotaPrestamo": 0.0,
+                "descuentoxCafeteria": 10000.0,
+                "totalAPagar": 121000.0
+            }
+        }
+    },
+    "987": {
+        "id": "987",
+        "nombre": "pedro",
+        "cargo": "navaja",
+        "salario": 500.0,
+        "nomina": {
+            "enero": {
+                "mesPagado": "enero",
+                "fechaPago": "1020",
+                "sueldoBase": 500.0,
+                "valorTotalHrasExtras": 27500.0,
+                "cuotaPrestamo": 25.0,
+                "descuentoxCafeteria": 10.0,
+                "totalAPagar": 27881.666666666668
+            }
+        }
+    },
+    "789": {
+        "id": "789",
+        "nombre": "juanito",
+        "cargo": " as",
+        "salario": 500.0,
         "nomina": {}
     }
 }
