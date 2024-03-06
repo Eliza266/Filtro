@@ -1,0 +1,9 @@
+{
+    "123": {
+        "id": "123",
+        "nombre": "",
+        "cargo": "sdf",
+        "salario": 123.0,
+        "nomina": {}
+    }
+}

@@ -14,5 +14,13 @@
         "stockmin": "sdf",
         "stockmax": "sdf",
         "valorVenta": "sfd"
+    },
+    "sfdf": {
+        "id": "sfdf",
+        "nombre": "sdf",
+        "valorUnitario": "sdf",
+        "stockmin": "sdf",
+        "stockmax": "sdf",
+        "valorVenta": "sdf"
     }
 }

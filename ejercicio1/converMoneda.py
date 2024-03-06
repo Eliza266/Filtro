@@ -31,8 +31,6 @@ def menu():
 
     else:
         pass
-    
-    opt=input('Ingrese la opcion que desea realizar: /n1.Pesos a dolares: /n2. ' )
 # funcionn principal
 if __name__=='__main__':
     dolar=3944
