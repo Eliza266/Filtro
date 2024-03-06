@@ -53,47 +53,62 @@ def regEmpleados():
     empleados.update({id:empleado})
     updateFile('empleados.json',empleados)
     
-
-
 def agrNomina():
     empleados=readFile('empleados.json')
     id=input('Ingrese el id del empleado para registro de nomina: ')
-    mesPagado=input('Ingrese el mes: ')
-    fechaPago=input('Ingrese la fecha de pago: ')
-    sueldoBase= empleados.get(id).get('salario')
-    horasExtras=float(input('Ingrese el numero de horas extras trabajadas: '))
-    diasTrabajados=float(input('Ingrese el numero de dias Trabajados:'))
-    valorTotalHrasExtras=horasExtras*5500
-    cuotaPrestamo=float(input('Ingrese el valor de la cuota del prestamo :'))
-    descuentoxCafeteria=float(input('Ingrese el valor total de gastos en cafeteria: '))
-    
-    totalAPagar= (((sueldoBase/30)* diasTrabajados)+valorTotalHrasExtras)-cuotaPrestamo-descuentoxCafeteria
+    if id in empleados:
+        mesPagado=input('Ingrese el mes: ')
+        fechaPago=input('Ingrese la fecha de pago: ')
+        sueldoBase= empleados.get(id).get('salario')
+        horasExtras=float(input('Ingrese el numero de horas extras trabajadas: '))
+        diasTrabajados=float(input('Ingrese el numero de dias Trabajados:'))
+        valorTotalHrasExtras=horasExtras*5500
+        cuotaPrestamo=float(input('Ingrese el valor de la cuota del prestamo :'))
+        descuentoxCafeteria=float(input('Ingrese el valor total de gastos en cafeteria: '))
+        
+        totalAPagar= (((sueldoBase/30)* diasTrabajados)+valorTotalHrasExtras)-cuotaPrestamo-descuentoxCafeteria
 
-    nomina={
-        'mesPagado':mesPagado,
-        'fechaPago':fechaPago,
-        'sueldoBase':sueldoBase,
-        'valorTotalHrasExtras':valorTotalHrasExtras,
-        'cuotaPrestamo':cuotaPrestamo,
-        'descuentoxCafeteria':descuentoxCafeteria,
-        'totalAPagar':totalAPagar
-    }
-    empleados.get(id).get('nomina').update({mesPagado:nomina})
-    updateFile('empleados.json',empleados)
+        nomina={
+            'mesPagado':mesPagado,
+            'fechaPago':fechaPago,
+            'sueldoBase':sueldoBase,
+            'valorTotalHrasExtras':valorTotalHrasExtras,
+            'cuotaPrestamo':cuotaPrestamo,
+            'descuentoxCafeteria':descuentoxCafeteria,
+            'totalAPagar':totalAPagar
+        }
+        empleados.get(id).get('nomina').update({mesPagado:nomina})
+        updateFile('empleados.json',empleados)
+    else:
+        print('Error, Id no se encuentra Registrado ')
+        pause_screen()
+        clear_screen()
+        agrNomina()
     
 def consultarPago():
     empleados=readFile('empleados.json')
     id = input('Ingrese el numero Id del empleado: ')
-    mes= input('Ingrese el mes que desea consultar: ')
-    pago=empleados[id]['nomina'][mes]['totalAPagar']
-    print(f'El pago fue de: {pago}')
+    if id in empleados:
+        mes= input('Ingrese el mes que desea consultar: ')
+        pago=empleados[id]['nomina'][mes]['totalAPagar']
+        print(f'El pago fue de: {pago}')
+    else: 
+        print('Error, Id no se encuentra Registrado ')
+        pause_screen()
+        clear_screen()
+        consultarPago()
 def consulNomina():
     empleados=readFile('empleados.json')
     id = input('Ingrese el numero Id del empleado: ')
-    mes= input('Ingrese el mes que desea consultar: ')
-    for key,valor in empleados[id]['nomina'][mes].items():
-        print(f'{key}: {valor}')
-
+    if id in empleados:
+        mes= input('Ingrese el mes que desea consultar: ')
+        for key,valor in empleados[id]['nomina'][mes].items():
+            print(f'{key}: {valor}')
+    else: 
+        print('Error, Id no se encuentra Registrado ')
+        pause_screen()
+        clear_screen()
+        consulNomina()
 if __name__=='__main__':
     checkFile('empleados.json',empleados)
     varBool=True
@@ -116,7 +131,7 @@ if __name__=='__main__':
             pause_screen()
             clear_screen()
         else:
-            varBool=bool(input('Desea ver de nuevo el menu? s(si) enter(no)'))
+            varBool=False
         
     
    
