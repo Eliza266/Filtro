@@ -1,0 +1,18 @@
+{
+    "45645": {
+        "id": "45645",
+        "nombre": "sfs",
+        "valorUnitario": "f",
+        "stockmin": "sf",
+        "stockmax": "sdf",
+        "valorVenta": "sdf"
+    },
+    "889": {
+        "id": "889",
+        "nombre": "sfds",
+        "valorUnitario": "sdf",
+        "stockmin": "sdf",
+        "stockmax": "sdf",
+        "valorVenta": "sfd"
+    }
+}
