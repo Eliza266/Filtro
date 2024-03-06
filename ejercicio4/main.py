@@ -58,11 +58,11 @@ def regEmpleados():
 def agrNomina():
     empleados=readFile('empleados.json')
     id=input('Ingrese el id del empleado para registro de nomina: ')
-    mesPagado=input('Ingrese el mes ')
+    mesPagado=input('Ingrese el mes: ')
     fechaPago=input('Ingrese la fecha de pago: ')
     sueldoBase= empleados.get(id).get('salario')
     horasExtras=float(input('Ingrese el numero de horas extras trabajadas: '))
-    diasTrabajados=float(input('Ingrese el numero de dias Trabajados'))
+    diasTrabajados=float(input('Ingrese el numero de dias Trabajados:'))
     valorTotalHrasExtras=horasExtras*5500
     cuotaPrestamo=float(input('Ingrese el valor de la cuota del prestamo :'))
     descuentoxCafeteria=float(input('Ingrese el valor total de gastos en cafeteria: '))
